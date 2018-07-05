@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="DR" extends="struts-default">
+<action name="DynaResult" class="indi.zx.action.UserAction">
+<result name="success" type="chain">${nextAction}</result>
+</action>
+<action name="zx">
+<result>zx.jsp</result>
+</action>
+<action name="admin">
+<result>admin.jsp</result>
+</action>
+<action name="ok">
+<result>ok.jsp</result>
+</action>
+</package>
+</struts>    

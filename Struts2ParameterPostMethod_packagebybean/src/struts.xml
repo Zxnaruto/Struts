@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="mypackage" extends="struts-default">
+<action name="regist" class="indi.zx.j2eetest.UserAction">
+<result>ok.jsp</result>
+</action>
+
+</package>
+<!-- 跳回主页这是进行服务器跳转，若想客户端跳转就在result中加上type="redirect" -->
+<package name="def" extends="struts-default">
+<!-- 错误页面跳转，当访问的action不存在时跳转到该页面 -->
+<default-action-ref name="error"></default-action-ref>
+<action name="forward">
+<result>index.jsp</result>
+</action>
+
+<action name="error">
+<result>error.jsp</result>
+</action>
+</package>
+
+</struts>    

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="NinjaSystem" extends="struts-default">
+<!-- 登陆动作，更具等级登陆到不同的页面 -->
+<action name="login" class="pers.zx.ninja.action.AllAction" method="execute">
+<result name="Primary">primaryninja.jsp</result>
+<result name="Junior">juniorninja.jsp</result>
+<result name="Senior">seniorninja.jsp</result>
+<result name="Top">topninja.jsp</result>
+<result name="ERROR">loginerror.jsp</result>
+<result name="input">index.jsp</result>
+</action>
+<!-- 下忍动作，查询下忍信息 -->
+<action name="primary_play" class="pers.zx.ninja.action.PrimaryNinja" method="execute">
+<result name="success">show.jsp</result>
+<result name="error">error.jsp</result>
+</action>
+
+<!-- 中忍动作，查询中忍信息 -->
+<action name="junior_play" class="pers.zx.ninja.action.JuniorNinja" method="execute">
+<result name="success">show.jsp</result>
+<result name="error">error.jsp</result>
+</action>
+
+<!-- 上忍动作，查询上忍信息 -->
+<action name="senior_play" class="pers.zx.ninja.action.SeniorNinja" method="execute">
+<result name="success">show.jsp</result>
+<result name="error">error.jsp</result>
+</action>
+
+<!-- 火影动作，查询火影信息 -->
+<action name="top_play" class="pers.zx.ninja.action.TopNinja" method="execute">
+<result name="success">show.jsp</result>
+<result name="error">error.jsp</result>
+</action>
+<!-- 火影动作，查询所有信息 -->
+<action name="all_play" class="pers.zx.ninja.action.TopNinja" method="Show">
+<result name="success">show.jsp</result>
+<result name="error">error.jsp</result>
+</action>
+<!-- 火影动作，删除 -->
+<action name="del" class="pers.zx.ninja.action.TopNinja" method="del">
+<result name="success">delsuccess.jsp</result>
+<result name="error">delerror.jsp</result>
+<result name="input">del.jsp</result>
+</action>
+<!-- 火影动作，更新忍者等级-->
+<action name="upda" class="pers.zx.ninja.action.TopNinja" method="upda">
+<result name="success">updasuccess.jsp</result>
+<result name="error">updaerror.jsp</result>
+<result name="input">upda.jsp</result>
+</action>
+<!-- 火影动作，插入 -->
+<action name="inse" class="pers.zx.ninja.action.TopNinja" method="inse">
+<result name="success">insesuccess.jsp</result>
+<result name="error">inseerror.jsp</result>
+<result name="input">inse.jsp</result>
+</action>
+
+<!-- 修改密码 -->
+<action name="updatepassword" class="pers.zx.ninja.action.PrimaryNinja" method="UpdatePassword">
+<result name="updatepassword">PasswordUpdateSuccess.jsp</result>
+<result name="PasswordUpdateError">PasswordUpdateError.jsp</result>
+<result name="input">PasswordUpdate.jsp</result>
+</action>
+<!-- 注册 -->
+<action name="reg" class="pers.zx.ninja.action.Register" method="execute">
+<result name="success">regsuccess.jsp</result>
+<result name="error">regerror.jsp</result>
+<result name="input">register.jsp</result>
+</action>
+</package>
+</struts>    

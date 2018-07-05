@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE validators PUBLIC
+ "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+ "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+   <validators>
+   <field name="ninja.NinjaName">
+   <field-validator type="requiredstring">
+   <message>忍者名不能为空</message>
+   </field-validator>
+    <field-validator type="stringlength">
+    <param name="minLength">2</param>  
+    <param name="maxLength">8</param> 
+   <message>忍者名必须在2-8位之间</message>
+   </field-validator>
+   </field>
+    <field name="ninja.NinjaSex">
+   <field-validator type="requiredstring">
+   <message>性别不能为空</message>
+   </field-validator>
+   </field>
+    <field name="ninja.NinjaAge">
+     <field-validator type="required">
+   <message>年龄不能为空</message>
+   </field-validator>
+   <field-validator type="int">
+    <param name="min">1</param>  
+    <param name="max">120</param> 
+   <message>年龄在1~120之间</message>
+   </field-validator>
+   </field>
+   
+    <field name="ninja.NinjaLevel">
+   <field-validator type="requiredstring">
+   <message>等级不能为空</message>
+   </field-validator>
+   </field>
+   <!--  -->
+   <field name="ninja.NinjaPassword">
+<field-validator type="requiredstring" short-circuit="true">
+<message>密码不能为空！</message>
+</field-validator>
+<field-validator type="stringlength">
+            <param name="minLength">6</param>
+            <param name="maxLength">12</param>
+            <message>密码必须在${minLength}和${maxLength}位之间</message>
+        </field-validator>
+</field>
+ <field name="ninja.NinjaPassword_t">
+   <field-validator type="requiredstring">
+   <message>确认密码不能为空</message>
+   </field-validator>
+   </field>
+<!-- 密码不一致-->
+<field name="ninja.NinjaPassword">
+<field-validator type="fieldexpression">
+<param name="expression"><![CDATA[ninja.NinjaPassword.equals(ninja.NinjaPassword_t)]]></param>
+<message>两次输入的密码不一致</message>
+</field-validator>
+</field>
+   
+   </validators>

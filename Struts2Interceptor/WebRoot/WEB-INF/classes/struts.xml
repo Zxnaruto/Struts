@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="commonpackage" extends="struts-default">
+<!-- 声明拦截器 -->
+<interceptors>
+<interceptor  name="mylogger" class="indi.zx.Interceptor.LoggerInterceptor">
+</interceptor>
+</interceptors>
+</package>
+
+<package name="mypackage" extends="commonpackage">
+<!-- 对execut方法进行拦截 -->
+<action name="interceptor" class="indi.zx.UserAction.UserAction" method="execute">
+<result>ok.jsp</result>
+<interceptor-ref name="mylogger">
+<param name="includeMethods">execute</param>
+</interceptor-ref>
+<!-- 由于自定义了拦截器，系统则不会调用默认的拦截器，这里为了使用默认的拦截器 -->
+<interceptor-ref name="defaultStack"></interceptor-ref>
+</action>
+
+<action name="add" class="indi.zx.UserAction.UserAction" method="add">
+<result>ok.jsp</result>
+</action>
+
+<action name="del" class="indi.zx.UserAction.UserAction" method="del">
+<result>index.jsp</result>
+</action>
+</package>
+</struts>    

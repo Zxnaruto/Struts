@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="mypackage" extends="struts-default">
+<!-- 索引index -->
+<action name="index">
+<result>/index.jsp</result>
+</action>
+<action name="hello" class="indi.zx.j2eetest.HelloAction" method="execute">
+    <result name="success">/hello.jsp</result>
+</action>
+</package>
+</struts>    

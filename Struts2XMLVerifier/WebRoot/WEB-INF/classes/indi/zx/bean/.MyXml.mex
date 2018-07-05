@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="" location="30,196" dimension="51,76" />
+  <StrutsActivity path=";6" location="39,0" dimension="58,96" />
+  <StrutsTransition id=";6,null,,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="68,96" />
+      <AbsolutePoint location="68,196" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id=",null,,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="42,196" />
+      <AbsolutePoint location="42,166" />
+      <AbsolutePoint location="0,166" />
+      <AbsolutePoint location="0,234" />
+      <AbsolutePoint location="30,234" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
